@@ -1,0 +1,3 @@
+func celsius_of_fahrenheit temp -> (temp - 32) * 5/9
+
+select temp_c = (celsius_of_fahrenheit 98.6)

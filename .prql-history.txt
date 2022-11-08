@@ -1,0 +1,837 @@
+
+# 2022-10-31 21:44:47.760714
++show tables
+
+# 2022-10-31 21:45:42.090927
++from albums | select title | take 10
+
+# 2022-10-31 21:45:43.446348
++;
+
+# 2022-10-31 21:45:57.580889
++from albums | select album_id | take 10
+
+# 2022-10-31 21:46:00.455415
++;
+
+# 2022-10-31 21:48:55.918596
++from albums | select
+
+# 2022-10-31 21:48:58.221135
++;
+
+# 2022-10-31 21:49:30.954815
++from albums | select album_id
+
+# 2022-10-31 21:49:33.307401
++'
+
+# 2022-10-31 21:49:35.227877
++;
+
+# 2022-10-31 21:49:44.137341
++from albums | select album_id;
+
+# 2022-10-31 21:51:27.178383
++exit
+
+# 2022-10-31 21:52:20.259749
++showtables
+
+# 2022-10-31 21:52:22.211896
++;
+
+# 2022-10-31 21:52:27.114266
++show tables;
+
+# 2022-10-31 21:53:07.193133
++from ScrapedData4 | select map;
+
+# 2022-10-31 21:53:08.850377
++;
+
+# 2022-10-31 21:53:29.079528
++from ScrapedData4 | select sd_map;
+
+# 2022-10-31 21:53:30.604323
++;
+
+# 2022-10-31 21:53:46.130167
++from ScrapedData4 | select sd_map | sort ;
+
+# 2022-10-31 21:53:48.214491
++;
+
+# 2022-10-31 21:57:00.053177
++from ScrapedData4 | join RecentSales [sd_map == rs_map] | take 20 ;
+
+# 2022-10-31 21:57:01.858927
++;
+
+# 2022-10-31 21:57:53.676511
++from ScrapedData4 | join RecentSales [sd_map == rs_map] | select rs_address | take 20 
+
+# 2022-10-31 21:57:54.622991
++;
+
+# 2022-10-31 21:58:34.579562
++from ScrapedData4 | join RecentSales [sd_map == rs_map] | select rs_address, sd_street_address | take 20 
+
+# 2022-10-31 21:58:36.554258
++;
+
+# 2022-10-31 21:59:52.982608
++from ScrapedData4 | join RecentSales [sd_map == rs_map] | select[ rs_address, sd_street_address] | take 20 
+
+# 2022-10-31 21:59:54.470407
++;
+
+# 2022-10-31 22:00:11.200025
++from ScrapedData4 | join RecentSales [sd_map == rs_map] | select [ rs_address, sd_street_address] | take 20 
+
+# 2022-10-31 22:00:13.211590
++;
+
+# 2022-10-31 22:01:46.075437
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] | take 20 ;
+
+# 2022-10-31 22:01:47.983591
++;
+
+# 2022-10-31 22:03:12.107105
++q
+
+# 2022-10-31 22:03:13.834833
++;
+
+# 2022-10-31 22:03:15.346884
++exit
+
+# 2022-10-31 22:04:24.081487
++?
+
+# 2022-10-31 22:05:14.763505
++q
+
+# 2022-10-31 22:05:16.499695
++;
+
+# 2022-10-31 22:05:18.815392
++exi
+
+# 2022-10-31 22:05:21.078637
++exit
+
+# 2022-10-31 22:07:05.495815
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] | take 20 ;
+
+# 2022-10-31 22:11:39.083519
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] | take 20
+
+# 2022-10-31 22:11:40.188808
++;
+
+# 2022-10-31 22:13:17.616070
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, sd_app_tot2021] | take 20
+
+# 2022-10-31 22:13:18.723227
++;
+
+# 2022-10-31 22:22:10.418673
++2021)]  take 20
+
+# 2022-10-31 22:22:10.485265
++;
+
+# 2022-10-31 22:22:29.292607
++from ScrapedData4 
+
+# 2022-10-31 22:22:30.355602
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-10-31 22:22:30.387023
++ 
+
+# 2022-10-31 22:22:30.577740
++ select [ rs_address, sd_street_address, printf("$%,d", SD_Assessment2021)]  take 20
+
+# 2022-10-31 22:22:30.673476
++;
+
+# 2022-10-31 22:23:03.178794
++from ScrapedData4 
+
+# 2022-10-31 22:23:04.246668
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-10-31 22:23:04.277484
++ 
+
+# 2022-10-31 22:23:04.459462
++ select [ rs_address, sd_street_address, SD_Assessment2021]  take 20
+
+# 2022-10-31 22:23:04.553775
++;
+
+# 2022-10-31 22:23:52.229083
++from ScrapedData4 |
+
+# 2022-10-31 22:23:53.292774
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] |
+
+# 2022-10-31 22:23:53.347351
++ select [ rs_address, sd_street_address, SD_Assessment2021]  take 20
+
+# 2022-10-31 22:23:53.378101
++;
+
+# 2022-10-31 22:24:18.424853
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021]  take 20
+
+# 2022-10-31 22:24:19.466215
++;
+
+# 2022-10-31 22:25:06.629582
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address ]  take 20
+
+# 2022-10-31 22:25:07.671531
++;
+
+# 2022-10-31 22:26:05.869277
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address ]  take 20
++
+
+# 2022-10-31 22:26:07.961096
++;
+
+# 2022-10-31 22:26:28.873299
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address ] | take 20
+
+# 2022-10-31 22:26:29.914442
++;
+
+# 2022-10-31 22:27:15.461203
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit, printf("$%,d", SD_Assessment2021)] | select [ rs_address, sd_street_address ] | take 20
+
+# 2022-10-31 22:27:16.504361
++;
+
+# 2022-10-31 22:27:55.545568
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit, printf("$%,d", SD_Assessment2021)] | select [ rs_address, sd_street_address ] | take 20
++ 
+
+# 2022-10-31 22:27:57.697543
++;
+
+# 2022-10-31 22:29:56.209794
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, printf("$%,d", SD_Assessment2021) ] | take 20
+
+# 2022-10-31 22:29:57.254131
++;
+
+# 2022-10-31 22:31:32.648370
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, printf("%d",sd_assessment2021] | take 20
+
+# 2022-10-31 22:31:33.518094
++;
+
+# 2022-11-01 07:43:01.276568
++exit
+
+# 2022-11-01 08:44:19.627389
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, printf("$%,d", SD_Assessment2021) ] | take 20
+
+# 2022-11-01 08:44:20.671965
++;
+
+# 2022-11-01 08:49:08.074609
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] \
+
+# 2022-11-01 08:49:09.144788
++| select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20
+
+# 2022-11-01 08:49:09.174646
++;
+
+# 2022-11-01 09:02:30.493768
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20
+
+# 2022-11-01 09:02:31.539323
++;
+
+# 2022-11-01 09:04:07.016725
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:12:11.121436
++func dollars d -> "$"+d
+
+# 2022-11-01 18:12:12.247739
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:12:56.865416
++func dollars d -> "$"+d
++
+
+# 2022-11-01 18:13:43.773789
++from scrapeddata4 | select sd_street_address | take 20 ;
+
+# 2022-11-01 18:13:45.312858
++;
+
+# 2022-11-01 18:14:42.132219
++func dollars d -> d+d
+
+# 2022-11-01 18:14:43.248785
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:28:34.223819
++func dollars d -> d+d
+
+# 2022-11-01 18:28:35.343572
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:29:33.883179
++func dollars d -> {d}+{d}
+
+# 2022-11-01 18:29:35.004393
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:29:50.440715
++# func dollars d -> {d}+{d}
+
+# 2022-11-01 18:29:51.561449
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:30:04.349328
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:31:19.249206
++from scrapeddata4
+
+# 2022-11-01 18:31:32.456103
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:32:17.971976
++select [ rs_address, sd_street_address, SD_Assessment2021 ]
+
+# 2022-11-01 18:32:21.462550
++take 20
+
+# 2022-11-01 18:32:23.083396
++;
+
+# 2022-11-01 18:34:06.052278
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_a
+
+# 2022-11-01 18:34:48.527464
++from ScrapedData4 
+
+# 2022-11-01 18:34:49.591898
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:34:49.642794
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:39:11.125285
++from ScrapedData4 
+
+# 2022-11-01 18:39:12.190771
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:39:12.239549
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:39:33.716837
++from ScrapedData4 
+
+# 2022-11-01 18:39:34.782301
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:39:34.836618
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:39:34.866676
++take 20
+
+# 2022-11-01 18:40:30.523128
++from ScrapedData4 
+
+# 2022-11-01 18:40:31.586993
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:40:31.639943
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:40:31.669336
++take 20
+
+# 2022-11-01 18:40:31.694996
++;
+
+# 2022-11-01 18:41:28.828391
++# func dollars d -> {d}+{d}
+
+# 2022-11-01 18:41:29.956292
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:41:52.161983
++# func dollars d -> {d}+{d}
+
+# 2022-11-01 18:41:53.280541
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address] SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:41:53.309958
++;
+
+# 2022-11-01 18:42:09.049054
++from ScrapedData4 
+
+# 2022-11-01 18:42:10.116155
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:42:10.167662
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:42:10.199917
++take 20
+
+# 2022-11-01 18:42:10.225305
++;
+
+# 2022-11-01 18:42:24.245913
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:42:25.288247
++;
+
+# 2022-11-01 18:42:50.999330
++from ScrapedData4 | join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] | select [ rs_address, sd_street_address, SD_Assessment2021 ] | take 20 
+
+# 2022-11-01 18:42:52.037856
++;
+
+# 2022-11-01 18:42:52.105468
++exit
+
+# 2022-11-01 18:48:02.000170
++func dollars d -> s"printf(\"$%,d\" {d})"
+
+# 2022-11-01 18:48:03.088277
++from ScrapedData4 
+
+# 2022-11-01 18:48:03.143915
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:48:03.200605
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:48:03.232210
++take 20
+
+# 2022-11-01 18:48:03.298664
++;
+
+# 2022-11-01 18:49:10.514818
++func dollars d -> s"printf("""$%,d""" {d})"
+
+# 2022-11-01 18:49:11.593966
++from ScrapedData4 
+
+# 2022-11-01 18:49:11.648558
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:49:11.700903
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:49:11.730582
++take 20
+
+# 2022-11-01 18:49:11.797542
++;
+
+# 2022-11-01 18:50:29.460841
++# func dollars d -> s"printf("""$%,d""" {d})"
+
+# 2022-11-01 18:50:30.514536
++func dollars d -> {d} + {d}
+
+# 2022-11-01 18:50:30.586113
++from ScrapedData4 
+
+# 2022-11-01 18:50:30.636992
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:50:30.689388
++select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+
+# 2022-11-01 18:50:30.757664
++take 20
+
+# 2022-11-01 18:50:30.788036
++;
+
+# 2022-11-01 18:52:10.881666
++take 20
+
+# 2022-11-01 18:52:10.921397
++;
+
+# 2022-11-01 18:52:17.957899
++# func dollars d -> s"printf("""$%,d""" {d})"
+
+# 2022-11-01 18:52:19.014019
++func dollars d -> {d} + {d}
+
+# 2022-11-01 18:52:19.086301
++from ScrapedData4 
+
+# 2022-11-01 18:52:19.142133
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:52:19.197931
++select [ rs_address, sd_street_address, (dollars SD_Assessment2021) ] 
+
+# 2022-11-01 18:52:19.267352
++take 20
+
+# 2022-11-01 18:52:19.298108
++;
+
+# 2022-11-01 18:53:29.876863
++# func dollars d -> s"printf("""$%,d""" {d})"
+
+# 2022-11-01 18:53:30.921761
++func dollars d -> {d} + {d}
+
+# 2022-11-01 18:53:30.985816
++from ScrapedData4 
+
+# 2022-11-01 18:53:31.037308
++join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+
+# 2022-11-01 18:53:31.090148
++select [ rs_address, sd_street_address, (dollars SD_Assessment2021) ] 
+
+# 2022-11-01 18:53:31.143242
++take 20
+
+# 2022-11-01 18:53:31.169268
++;
+
+# 2022-11-01 21:01:08.103893
++# A test .prql file. Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:01:09.156402
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:01:09.231877
++from albums
+
+# 2022-11-01 21:01:09.266694
++select title
+
+# 2022-11-01 21:01:09.298465
++take 20
+
+# 2022-11-01 21:01:09.355926
++;
+
+# 2022-11-01 21:07:08.030242
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:07:09.078233
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:07:09.130613
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:07:09.185639
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:07:09.255390
++from albums
+
+# 2022-11-01 21:07:09.329468
++select title
+
+# 2022-11-01 21:07:09.366052
++take 20
+
+# 2022-11-01 21:07:09.395334
++;
+
+# 2022-11-01 21:14:09.351321
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:14:10.398344
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:14:10.453840
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:14:10.505946
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:14:10.573790
++from albums
+
+# 2022-11-01 21:14:10.637470
++select title
+
+# 2022-11-01 21:14:10.670284
++take 20
+
+# 2022-11-01 21:14:36.989819
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:14:38.038238
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:14:38.090164
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:14:38.140638
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:14:38.201894
++from albums
+
+# 2022-11-01 21:14:38.261843
++select title
+
+# 2022-11-01 21:14:38.294557
++take 20
+
+# 2022-11-01 21:14:38.324806
++;
+
+# 2022-11-01 21:19:54.690648
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:19:55.746060
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:19:55.806317
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:19:55.863191
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:19:55.928173
++from albums
+
+# 2022-11-01 21:19:55.996926
++select title
+
+# 2022-11-01 21:19:56.037160
++take 20
+
+# 2022-11-01 21:19:56.066986
++;
+
+# 2022-11-01 21:20:24.446399
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:20:25.497824
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:20:25.550181
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:20:25.605548
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:20:25.672720
++from albums
+
+# 2022-11-01 21:20:25.747482
++select title
+
+# 2022-11-01 21:20:25.783893
++take 20
+
+# 2022-11-01 21:20:25.812547
++;
+
+# 2022-11-01 21:27:23.290744
++from albums
+
+# 2022-11-01 21:27:31.378344
++select title
+
+# 2022-11-01 21:27:39.852010
++take 2
+
+# 2022-11-01 21:27:41.885143
++;
+
+# 2022-11-01 21:27:48.275149
++exit
+
+# 2022-11-01 21:28:36.080291
++#this is a comment
+
+# 2022-11-01 21:28:42.855619
++# and another comment
+
+# 2022-11-01 21:28:50.807537
++from albums
+
+# 2022-11-01 21:28:54.832753
++select title
+
+# 2022-11-01 21:28:57.651626
++take 2
+
+# 2022-11-01 21:28:59.665954
++;
+
+# 2022-11-01 21:29:59.749711
++exit
+
+# 2022-11-01 21:34:42.347764
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 21:34:43.398307
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 21:34:43.451857
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 21:34:43.506504
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 21:34:43.587077
++from albums
+
+# 2022-11-01 21:34:43.657206
++select title
+
+# 2022-11-01 21:34:43.694610
++take 20
+
+# 2022-11-01 21:34:43.723639
++;
+
+# 2022-11-01 22:05:04.713908
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 22:05:05.764318
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 22:05:05.818081
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 22:05:05.870677
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 22:05:05.957107
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-01 22:05:06.054075
++from albums
+
+# 2022-11-01 22:05:06.088224
++select title
+
+# 2022-11-01 22:05:06.119780
++take 20
+
+# 2022-11-01 22:05:06.146160
++;
+
+# 2022-11-01 22:05:49.333838
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 22:05:50.384459
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 22:05:50.438124
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 22:05:50.489616
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 22:05:50.565764
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-01 22:05:50.661967
++from albums
+
+# 2022-11-01 22:05:50.704100
++select (dollars album_id)
+
+# 2022-11-01 22:05:50.737877
++take 20
+
+# 2022-11-01 22:05:50.766410
++;
+
+# 2022-11-01 22:06:22.941872
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-01 22:06:23.996475
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-01 22:06:24.053035
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-01 22:06:24.106808
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-01 22:06:24.184229
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-01 22:06:24.283294
++from albums
+
+# 2022-11-01 22:06:24.324130
++derive (dollars album_id)
+
+# 2022-11-01 22:06:24.359503
++take 20
+
+# 2022-11-01 22:06:24.389360
++;
+
+# 2022-11-01 22:12:15.786747
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-01 22:12:20.642828
++select
+
+# 2022-11-01 22:12:32.144613
++select (dollars 1234567)
+
+# 2022-11-01 22:12:33.098952
++;
+
+# 2022-11-01 22:16:44.909274
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-01 22:16:53.351265
++select (dollars 1234567)
+
+# 2022-11-01 22:16:54.787322
++;
+
+# 2022-11-02 08:52:35.584457
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-02 08:52:36.666568
++from albums
+
+# 2022-11-02 08:52:36.705751
++derive (dollars album_id)
+
+# 2022-11-02 08:52:36.738409
++take 20
+
+# 2022-11-02 08:53:42.576158
++func dollars d -> s"""printf("$,d",{d})"""
+
+# 2022-11-02 08:53:52.129197
++select (dollars 1234567)
+
+# 2022-11-02 08:54:03.269571
++;

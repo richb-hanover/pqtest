@@ -1,0 +1,7 @@
+# Use derive to create a variable
+from foo
+      derive diff = (a - b)
+select [
+      diff*2,
+      3*diff
+   ]

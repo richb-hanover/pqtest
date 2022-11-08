@@ -1,0 +1,8 @@
+# THIS IS A BAD BUG! It freezes me in my use of PRQL
+# since results cannot be counted on to be correct.
+# Results for diff should be c - (a + b) 
+from foo
+select [
+  sum = (a+b),
+  diff = c-sum,
+]

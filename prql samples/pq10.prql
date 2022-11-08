@@ -1,0 +1,15 @@
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s"""cast((100*({n}-{o})/{o}) as real)"""
+
+func printpct v -> s"""printf("%.1f%",{v})"""
+
+select [
+a= (printpct (pct 100 125) ) ,
+
+b= (printpct (pct 125 100) ),
+
+(printpct (pct 1000 1) ),
+
+(printpct (pct 1 1000) ),
+(pct 100 125) ,
+] 

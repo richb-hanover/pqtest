@@ -1,0 +1,17 @@
+# dollars displays a numeric value as dollars with commas
+func dollars d -> s"""printf("$%,d",{d}) """
+
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s"""cast((100*({n}-{o})/{o}) as real)"""
+
+from ScrapedData 
+select [
+Address=sd_street_address,
+Assess_2021 =(dollars sd_assessment2021),
+Apprais_2021 = (dollars sd_appraisal2021),
+Diff = (dollars (sd_Appraisal2021-sd_assessment2021)),
+Ratio = (pct sd_appraisal2021 sd_assessment2021),
+Tax_Savings =(dollars 0.02407*(sd_Appraisal2021-sd_assessment2021))
+]
+filter sd_assessment2021 < sd_appraisal2021*0.5
+sort Ratio

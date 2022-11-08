@@ -1,0 +1,25 @@
+# Odd "unknown variable" error 
+# Caused by placing "filter" at bottom instead
+# of before "select"
+func dollars d -> s"""printf("$%,d",{d}) as {d}"""
+
+func pct n d -> s"""printf("%.0f",cast (100+100*(r.{n}-{d})/{d} as real)) as "Percent")"""
+
+from RecentSales
+join side:left ScrapedData [ 
+  RS_Map == SD_Map , 
+  RS_Lot == SD_Lot , 
+  RS_Unit == SD_Unit 
+  ]
+select [
+  RS_Map, 
+  RS_Lot, 
+  RS_Unit, 
+  RS_Address, 
+  RS_RecentSaleDate, 
+  RS_RecentSalePrice, 
+  SD_Assessment2021,
+  (pct SD_Assessment2021 RS_RecentSalePrice)
+  ]
+
+filter RS_Map != ""

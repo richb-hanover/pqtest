@@ -1,0 +1,6 @@
+func dollars d -> s"""printf("$%,d",{d}) as {d}"""
+
+from albums
+derive (dollars album_id)
+take 20
+

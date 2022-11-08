@@ -1,0 +1,5 @@
+from ScrapedData4 
+join RecentSales [sd_map == rs_map, sd_lot==rs_lot,sd_unit==rs_unit] 
+select [ rs_address, sd_street_address, SD_Assessment2021 ] 
+take 21
+

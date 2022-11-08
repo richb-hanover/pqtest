@@ -1,0 +1,11 @@
+# This file - pq4.prql - is for testing PyPrql
+# Ensure the chinook database is in the same directory.
+# (https://github.com/lerocha/chinook-database)
+# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+func dollars d -> s"""printf("$%,d",{d}) as {d}"""
+
+from ScrapedData4
+select [(dollars SD_Assessment2021) ,SD_Assessment2021 ]
+take 20
+

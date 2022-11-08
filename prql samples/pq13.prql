@@ -1,0 +1,27 @@
+func dollars d -> s"""printf("$%,d",{d}) """
+
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s"""cast((100*({n}-{o})/{o}) as real)"""
+
+from ZoningPermits
+join side:left ScrapedData [
+  ZP_Map == SD_Map,
+  ZP_Lot == SD_Lot,
+  ZP_Unit == SD_Unit
+]
+select [
+  Map = ZP_Map,
+  Lot = ZP_Lot,
+  Unit = ZP_Unit,
+  Address = ZP_Address,
+  Date = (ZP_DateIssued),
+  Descr = ZP_Description,
+  Est_Cost = ZP_EstCost,
+  Prev_Ass = sd_Prev_Assess2020,
+  Computed_Ass = (SD_Prev_Assess2020+ZP_EstCost),
+  Curr_Ass = sd_Assessment2021,
+  Delta = Curr_Ass-(Computed_Ass),
+]
+
+filter Date > "2020-01-01"
+sort Date

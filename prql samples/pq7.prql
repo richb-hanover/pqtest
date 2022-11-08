@@ -1,0 +1,4 @@
+# Shows error message on wrong line if no closing """
+func func1 d -> s"""printf("$%,d",{d}) as {d}"""
+
+func func2 d -> s"""printf("$%,d",{d}) as {d}

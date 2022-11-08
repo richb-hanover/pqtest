@@ -1,0 +1,32 @@
+# PRQL equivalent of "Does RecentSales price differ much from Assessed value from ScrapedData?"
+
+# dollars displays a numeric value as dollars with commas
+func dollars d -> s"""printf("$%,d",{d}) as {d}"""
+
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s"""cast((100*({n}-{o})/{o}) as real)"""
+
+func printpct v -> s"""printf("%.1f%",{v})"""
+
+from RecentSales
+join side:left ScrapedData [ 
+  RS_Map == SD_Map , 
+  RS_Lot == SD_Lot , 
+  RS_Unit == SD_Unit ]
+filter RS_Map != ""
+filter RS_RecentSaleDate < "2021-04-01"
+derive pctincr = (pct RS_RecentSalePrice SD_Assessment2021)
+derive pctprt = (printpct pctincr)
+select [
+  RS_Map, 
+  RS_Lot, 
+  RS_Unit, 
+  RS_Address, 
+  RS_RecentSaleDate, 
+  (dollars RS_RecentSalePrice), 
+  (dollars SD_Assessment2021), 
+  pctincr,
+  pctprt,
+   ]
+sort pctincr
+take 10

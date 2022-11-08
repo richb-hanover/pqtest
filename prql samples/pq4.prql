@@ -1,0 +1,9 @@
+# This file - pq4.prql - is for testing PyPrql
+# Ensure the chinook database is in the same directory.
+# (https://github.com/lerocha/chinook-database)
+# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+from albums
+select title
+take 20
+
