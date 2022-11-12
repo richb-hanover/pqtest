@@ -1,0 +1,26 @@
+# Playing with functions and params - bare and in {}
+# and also quote characters
+
+func f1 d -> d
+func f2 d -> s"cast ({d} as real)"
+func f3 d -> s'cast ({d} as real)'
+func f4 d -> s'''cast ({d} as real)'''
+# needs {} to substitute param
+func f5 d -> s'''cast (d as real)''' 
+# gives "expected expr_mul" error
+# func f6 d -> {d} 
+func f7 d -> s'printf("%d",d)'
+func f8 d -> s'printf("%d",{d})'
+
+
+from foo
+select [
+  x = (f1 x),
+  y = (f2 y),
+  z = (f3 z),
+  a = (f4 a),
+  b = (f5 b),
+  # c = (f6 c),
+  d = (f7 d),
+  e = (f8 e)
+]

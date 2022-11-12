@@ -1,0 +1,13 @@
+# Rows in Dina's spreadsheet not in the ScrapedData2
+# THIS GETS DOUBLE THE ROWS...
+from ScrapedData2
+join side:left RawAsVsApDina [
+  AA_map == SD_Map,
+  AA_Lot == SD_Lot,
+  s'trim({AA_Unit})' == s'trim({SD_Unit})'
+]
+select [
+  SD_Street_Address,
+  AA_Location,
+  AA_Owner
+]

@@ -1,0 +1,18 @@
+# Horsing around with Joins
+
+from RawAsVsApDina
+join side:inner ScrapedData3 [
+  AA_map == SD_Map,
+  AA_Lot == SD_Lot,
+  AA_Unit == SD_Unit
+]
+select [
+  AA_Map,
+  AA_Lot,
+  AA_Unit,
+  AA_Owner, 
+  SD_Map,
+  SD_Lot,
+  SD_Unit, 
+  SD_Owner
+]

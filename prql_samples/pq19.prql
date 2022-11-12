@@ -1,0 +1,65 @@
+# Properties whose Improvements, Land, or Total Assessment changed
+
+# dollars displays a numeric value as dollars with commas
+func dollars d -> s"""printf("$%,d",{d})"""
+
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s'cast(({n}-{o}) as real)/({o})*100'
+
+# prtpct prints a floating point number with "%"
+func prtpct v -> s'printf("%1.1f%", {v})'
+
+from ScrapedData3
+derive [
+  AppLandInc=(pct SD_App_Land2020 SD_App_Land2021),
+  AppImprInc=(pct SD_App_Imp2020 SD_App_Imp2021),
+  AppTotInc=(pct SD_App_Tot2020 SD_App_Tot2021),
+  AssLandInc=(pct SD_Ass_Land2020 SD_Ass_Land2021),
+  AssImprInc=(pct SD_Ass_Imp2020 SD_Ass_Imp2021),
+  AssTotInc=(pct SD_Ass_Tot2020 SD_Ass_Tot2021),
+  Rate2020=26.66,
+  Rate2021=24.07,
+  Rate2022=23.98,
+  Tax2020=Rate2020*SD_Ass_Tot2020/1000,
+  Tax2021=Rate2021*SD_Ass_Tot2021/1000,
+  TaxIncr=(pct Tax2020 Tax2021),
+]
+select [
+  Map=SD_Map,
+  Lot=SD_Lot,
+  Unit=SD_Unit,
+  Street_Address=SD_Street_Address,
+  Owner=SD_Owner,
+  Acres=SD_Lot_Size,
+
+  AppLand2020=(dollars SD_App_Land2020),
+  AppLand2021=(dollars SD_App_Land2021),
+  `App Land%`=(prtpct AppLandInc),
+
+  AppImpr2020=(dollars SD_App_Imp2020),
+  AppImpr2021=(dollars SD_App_Imp2021),
+  `App Impr%`=(prtpct AppImprInc),
+
+  AppTot2020=(dollars SD_App_Tot2020),
+  AppTot2021=(dollars SD_App_Tot2021),
+  `App Tot%`=(prtpct AppTotInc),
+
+  AssLand2020=(dollars SD_Ass_Land2020),
+  AssLand2021=(dollars SD_Ass_Land2021),
+  `Ass Land%`=(prtpct AssLandInc),
+
+  AssImpr2020=(dollars SD_Ass_Imp2020),
+  AssImpr2021=(dollars SD_Ass_Imp2021),
+  `Ass Impr%`=(prtpct AssImprInc),
+
+  AssTot2020=(dollars SD_Ass_Tot2020),
+  AssTot2021=(dollars SD_Ass_Tot2021),
+  `Ass Tot%`=(prtpct AssTotInc),
+
+  `Tax 2020` = (dollars Tax2020),
+  `Tax 2021` = (dollars Tax2021),
+  `Tax Incr%` = (prtpct TaxIncr)
+]
+# sort TaxIncr
+sort [Map, Lot, Unit]
+#  filter SD_Street_Address == "foo"

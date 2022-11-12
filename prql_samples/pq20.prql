@@ -1,0 +1,20 @@
+# Displays problem with computations that aren't parenthesized
+
+# pct computes the amount (percent) the new differs from old
+func pct o n -> s'cast(({n}-{o}) as real)/({o})*100'
+
+derive [
+  Rate2020=25.00,
+  Rate2021=24.00,
+  Value2020=100000,
+  Value2021=110000,
+  Tax2020=Rate2020*Value2020/1000,
+  Tax2021=Rate2021*Value2021/1000,
+  Increase=(pct Tax2020 Tax2021),
+]
+select [
+  Tax2020,
+  Tax2021,
+  Increase,
+]
+sort Increase

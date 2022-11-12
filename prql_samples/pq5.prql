@@ -6,6 +6,9 @@
 func dollars d -> s"""printf("$%,d",{d}) as {d}"""
 
 from ScrapedData4
-select [(dollars SD_Assessment2021) ,SD_Assessment2021 ]
+select [
+  (dollars SD_Assessment2021) ,
+  SD_Assessment2021 
+  ]
 take 20
 

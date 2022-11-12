@@ -835,3 +835,57 @@
 
 # 2022-11-02 08:54:03.269571
 +;
+
+# 2022-11-10 06:42:27.950524
++# This file - pq4.prql - is for testing PyPrql
+
+# 2022-11-10 06:42:29.012680
++# Ensure the chinook database is in the same directory.
+
+# 2022-11-10 06:42:29.064257
++# (https://github.com/lerocha/chinook-database)
+
+# 2022-11-10 06:42:29.113181
++# Invoke with pyprql 'sqlite:///chinook.sqlite' < pq4.prql
+
+# 2022-11-10 06:42:29.201241
++func dollars d -> s"""printf("$%,d",{d}) as {d}"""
+
+# 2022-11-10 06:42:29.299644
++from ScrapedData4
+
+# 2022-11-10 06:42:29.332634
++select [
+
+# 2022-11-10 06:42:29.372490
++  (dollars SD_Assessment2021) ,
+
+# 2022-11-10 06:42:29.406958
++  SD_Assessment2021 
+
+# 2022-11-10 06:42:29.432993
++  ]
+
+# 2022-11-10 06:42:29.505734
++take 20
+
+# 2022-11-10 06:42:51.370890
++# THIS IS A BAD BUG! It freezes me in my use of PRQL
+
+# 2022-11-10 06:42:52.428053
++# since results cannot be counted on to be correct.
+
+# 2022-11-10 06:42:52.475177
++# Results for diff should be c - (a + b) 
+
+# 2022-11-10 06:42:52.504103
++from foo
+
+# 2022-11-10 06:42:52.532558
++select [
+
+# 2022-11-10 06:42:52.565073
++  sum = (a+b),
+
+# 2022-11-10 06:42:52.633944
++  diff = c-sum,

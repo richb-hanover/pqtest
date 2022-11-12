@@ -1,0 +1,8 @@
+# Mixed case variables matter
+
+derive [
+  Appraised=1000
+]
+select [
+  appraised
+]
