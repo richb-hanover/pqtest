@@ -11,6 +11,8 @@ join side:left ScrapedData [
   RS_Lot == SD_Lot , 
   RS_Unit == SD_Unit 
   ]
+filter RS_Map != ""
+
 select [
   RS_Map, 
   RS_Lot, 
@@ -22,4 +24,3 @@ select [
   (pct SD_Assessment2021 RS_RecentSalePrice)
   ]
 
-filter RS_Map != ""

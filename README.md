@@ -62,12 +62,16 @@ on-the-line comments - perhaps some full-line comments would be useful in exampl
 (Maybe it has to do with s-strings...)
 **Update:** Yes. Functions work as expected when using the direct name of the parameter.
 F-strings or S-strings require `{}` around the parameter name to substitute it.  
-* Why do some S-strings use `"` and others use `"""`?
+* Why do some some strings use `"` and others use `"""`?
 I don't find an explanation in the Book. **Update:** `"`, `"""`, `'` and `'''` as well as wrapping strings in "the other" quote
-(e.g.`'looking for "foo"'`) all work for S-strings.
+(e.g.`'looking for "foo"'`) all work for strings.
 
 * I didn't initially realize that it is possible to assign a "column heading" as a side-effect of a calculation: `heading_name = <expr>` Perhaps better documentation
 
+* Need to document the "cast" facility, e.g., `derive foo = (bar | as int)` by name, so a search for "cast" or "casting" will find it.
+It would be nice if a search for "|" or "as" might find it as well, so someone looking at the code could say, "What the heck is that?"
+ 
+* Documentation should specify that variable names are case-sensitive. 
 
 ## Bad error messages
  
@@ -97,10 +101,6 @@ I don't understand the semantics.
    func pct o n -> s"""cast((100*({n}-{o})/{o}) as real)"""
    yields
    cast((100 *(125 -100) / 100) as real)
+                   ^--- inserted space - expected?
    ```
    
-* Are variable names case-sensitive?
-Sometimes it seems they are, although I didn't write down an example.
-And sometimes VSCode extension declared that a variable was not defined when I had clearly used it earlier. How does it know?
-**Update:** See #1125 for a bug report.
-See also the `pq21.prql` file for an example

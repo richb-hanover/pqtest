@@ -1,0 +1,7 @@
+# Updated sub-expresssion handling?
+
+from foo
+select [
+   s = (a+b),
+   diff = c-s
+] 

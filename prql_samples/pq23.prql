@@ -1,0 +1,19 @@
+# Testing arithmetic operations
+
+# from foo
+derive [
+  b=7,
+  c=8,
+  d=2,
+  a = (b+c)/d,
+  a2 = a*a,
+  a3 = a*a*a,
+  a6 = a3*a3,
+  a6 = a3*a3,
+  a6 = a3*a3,
+  a6 = a3*a3,
+  a6 = a3*a3,
+  a6 = a3*a3,
+  a6 = a3*a3,
+
+]
